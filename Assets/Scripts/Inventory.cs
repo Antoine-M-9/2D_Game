@@ -7,7 +7,7 @@ public class Inventory : MonoBehaviour
     public Text coinsCountText;
 
     public static Inventory instance;
-    // Grâce à la variable static on peut y accéder depuis n'importe où
+    // Grâce à la variable static on peut y accéder depuis n'importe où !!!
 
     private void Awake() 
     {
@@ -22,6 +22,12 @@ public class Inventory : MonoBehaviour
     public void AddCoins(int count) 
     {
         coinsCount += count;
+        coinsCountText.text = coinsCount.ToString();
+    }
+
+    public void RemoveCoins(int count)
+    {
+        coinsCount -= count;
         coinsCountText.text = coinsCount.ToString();
     }
 }
